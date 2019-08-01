@@ -1,13 +1,7 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-
-    <input
-      type="file"
-      accept="application/json"
-      @change="processJSON"
-    >
-  </div>
+<template lang="pug">
+  .hello
+    h1 {{msg}}
+    input(type='file' accept='application/json' @change='processJSON')
 </template>
 
 <script>
