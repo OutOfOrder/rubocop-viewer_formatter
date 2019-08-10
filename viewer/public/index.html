@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>rubocop-viewer</title>
   </head>
   <body>
@@ -12,6 +11,69 @@
       <strong>We're sorry but rubocop-viewer doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <script type="text/javascript">
+      window.RUBOCOP_DATA = {
+        "metadata": {
+          "rubocop_version": "0.74.0",
+          "ruby_engine": "ruby",
+          "ruby_version": "2.4.4",
+          "ruby_patchlevel": "296",
+          "ruby_platform": "x86_64-darwin17"
+        },
+        "files": [
+          {
+            "path": "Gemfile",
+            "offenses": [
+
+            ]
+          },
+          {
+            "path": "lib/rubocop/formatter/viewer_formatter.rb",
+            "offenses": [
+
+            ]
+          },
+          {
+            "path": "rubocop_viewer.gemspec",
+            "offenses": [
+              {
+                "severity": "convention",
+                "message": "Metrics/LineLength: Line is too long. [88/80]",
+                "cop_name": "Metrics/LineLength",
+                "corrected": false,
+                "location": {
+                  "source": "  gem.description = 'A formatter for rubocop that generates a vue based-interactive app'",
+                  "start_line": 11,
+                  "last_line": 11,
+                  "start_column": 80,
+                  "last_column": 88,
+                  "length": 8
+                }
+              },
+              {
+                "severity": "convention",
+                "message": "Metrics/LineLength: Line is too long. [88/80]",
+                "cop_name": "Metrics/LineLength",
+                "corrected": false,
+                "location": {
+                  "source": "  gem.summary     = 'A formatter for rubocop that generates a vue based-interactive app'",
+                  "start_line": 12,
+                  "last_line": 12,
+                  "start_column": 80,
+                  "last_column": 88,
+                  "length": 8
+                }
+              }
+            ]
+          }
+        ],
+        "summary": {
+          "offense_count": 2,
+          "target_file_count": 3,
+          "inspected_file_count": 3
+        }
+      };
+    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>
