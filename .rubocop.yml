@@ -1,0 +1,22 @@
+require:
+  - ./lib/rubocop/formatter/viewer_formatter.rb
+AllCops:
+  UseCache: false
+  TargetRubyVersion: 2.4
+#  DefaultFormatter: RuboCop::Formatter::ViewerFormatter
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: no_space
+  SpaceBeforeBlockParameters: false
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+Layout/IndentFirstHashElement:
+  IndentationWidth: 4
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+Layout/IndentAssignment:
+  IndentationWidth: 4

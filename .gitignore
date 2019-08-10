@@ -1,0 +1,13 @@
+.DS_Store
+
+Gemfile.lock
+
+# local env files
+.env.local
+.env.*.local
+
+# Editor directories and files
+.idea
+
+.ruby-version
+.ruby-gemset
