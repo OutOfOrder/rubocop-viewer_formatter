@@ -5,8 +5,12 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
-new Vue({
+var app = new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app');
+
+if (window.RUBOCOP_DATA) {
+  app.$store.commit('LOAD_JSON', window.RUBOCOP_DATA);
+}
