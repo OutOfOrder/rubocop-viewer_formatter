@@ -96,13 +96,19 @@ module RuboCop
 
       def hash_for_location(offense)
         {
-            source:       offense.source_line,
+            source:       source_lines(offense),
             start_line:   offense.line,
             last_line:    offense.last_line,
             start_column: offense.column,
             last_column:  offense.last_column,
             length:       offense.location.length,
         }
+      end
+
+      def source_lines(offense)
+        (offense.line .. offense.last_line).map do |line_num|
+          offense.location.source_buffer.source_line(line_num)
+        end.join("\n")
       end
     end
   end

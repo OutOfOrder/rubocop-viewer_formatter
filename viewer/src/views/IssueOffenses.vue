@@ -18,7 +18,7 @@
           code
             | {{pre_line(entry.location)}}
             span.highlight(:class='entry.severity')
-              | {{highligh_line(entry.location)}}
+              | {{highlight_line(entry.location)}}
             | {{post_line(entry.location)}}
 </template>
 

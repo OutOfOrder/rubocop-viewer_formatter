@@ -119,7 +119,6 @@
           @each $severity, $color in $severity_colors {
             &.#{$severity} {
               background-color: adjust-color($color, $alpha: -0.4);
-              border: 1px solid adjust-color($color, $alpha: -0.6);
             }
           }
         }
