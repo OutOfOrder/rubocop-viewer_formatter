@@ -22,11 +22,11 @@ const store = new Vuex.Store({
 if (module.hot) {
   module.hot.accept([
     './getters',
-    './mutations'
+    './mutations',
   ], () => {
     store.hotUpdate({
       getters: require('./getters'),
-      mutations: require('./mutations')
+      mutations: require('./mutations'),
     });
   });
 }

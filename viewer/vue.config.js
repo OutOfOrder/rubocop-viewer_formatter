@@ -5,6 +5,6 @@ module.exports = {
     config.optimization.delete('splitChunks');
   },
   css: {
-    extract: false
-  }
+    extract: false,
+  },
 };

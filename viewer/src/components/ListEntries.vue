@@ -7,14 +7,14 @@
 </template>
 
 <script>
-  export default {
-    name: "ListEntries",
-    props: {
-      entries: {type: Array, required: true},
-      routeName: {type: String, required: true},
-      routeParam: {type: String, required: true},
-    },
-  };
+export default {
+  name: 'ListEntries',
+  props: {
+    entries: { type: Array, required: true },
+    routeName: { type: String, required: true },
+    routeParam: { type: String, required: true },
+  },
+};
 </script>
 
 <style scoped lang="scss">

@@ -8,17 +8,17 @@
 </template>
 
 <script>
-  import ListEntries from '../components/ListEntries';
+import ListEntries from '../components/ListEntries';
 
-  import {mapGetters} from 'vuex';
+import { mapGetters } from 'vuex';
 
-  export default {
-    name: "ByIssues",
-    components: {ListEntries},
-    computed: {
-      ...mapGetters(['issues']),
-    },
-  };
+export default {
+  name: 'ByIssues',
+  components: { ListEntries },
+  computed: {
+    ...mapGetters(['issues']),
+  },
+};
 </script>
 
 <style scoped lang="scss">

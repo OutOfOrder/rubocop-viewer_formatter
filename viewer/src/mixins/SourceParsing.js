@@ -7,12 +7,12 @@ export default {
       if (location.start_line === location.last_line) {
         return location.source.substring(location.start_column, location.last_column);
       } else {
-        let source_lines = location.source.split('\n');
-        let s = source_lines[0].substring(location.start_column);
-        for (let i = 1; i < source_lines.length - 1; ++i) {
-          s += '\n' + source_lines[i];
+        const sourceLines = location.source.split('\n');
+        let s = sourceLines[0].substring(location.start_column);
+        for (let i = 1; i < sourceLines.length - 1; ++i) {
+          s += '\n' + sourceLines[i];
         }
-        s += "\n" + source_lines[source_lines.length - 1].substring(0, location.last_column);
+        s += '\n' + sourceLines[sourceLines.length - 1].substring(0, location.last_column);
         return s;
       }
     },
@@ -20,10 +20,10 @@ export default {
       if (location.start_line === location.last_line) {
         return location.source.substring(location.last_column);
       } else {
-        let source_lines = location.source.split('\n');
+        const sourceLines = location.source.split('\n');
 
-        return source_lines[source_lines.length - 1].substring(location.last_column);
+        return sourceLines[sourceLines.length - 1].substring(location.last_column);
       }
-    }
-  }
+    },
+  },
 };

@@ -14,12 +14,12 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: {name: 'by_files'},
+      redirect: { name: 'by_files' },
     },
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: About,
     },
     {
       path: '/files',
@@ -32,7 +32,7 @@ export default new Router({
           component: FileOffenses,
           props: true,
         },
-      ]
+      ],
     },
     {
       path: '/issues',
@@ -45,7 +45,7 @@ export default new Router({
           component: IssueOffenses,
           props: true,
         },
-      ]
+      ],
     },
-  ]
+  ],
 });

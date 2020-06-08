@@ -10,13 +10,13 @@
 </template>
 
 <script>
-  export default {
-    name: "OffenseList",
-    props: {
-      label: {type: String, required: true},
-      offenses: {type: Array, required: true},
-    },
-  };
+export default {
+  name: 'OffenseList',
+  props: {
+    label: { type: String, required: true },
+    offenses: { type: Array, required: true },
+  },
+};
 </script>
 
 <style scoped lang="scss">

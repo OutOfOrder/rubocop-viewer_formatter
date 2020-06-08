@@ -23,26 +23,26 @@
 </template>
 
 <script>
-  import OffenseList from '../components/OffenseList';
-  import SourceParsing from '../mixins/SourceParsing';
+import OffenseList from '../components/OffenseList';
+import SourceParsing from '../mixins/SourceParsing';
 
-  export default {
-    name: "IssueOffenses",
-    components: {OffenseList},
-    mixins: [SourceParsing],
-    props: {
-      issueId: {type: String, required: true}
+export default {
+  name: 'IssueOffenses',
+  components: { OffenseList },
+  mixins: [SourceParsing],
+  props: {
+    issueId: { type: String, required: true },
+  },
+  computed: {
+    issue() {
+      return this.$store.getters.issueById(this.issueId);
     },
-    computed: {
-      issue() {
-        return this.$store.getters.issueById(this.issueId);
-      },
-      offenses() {
-        return this.$store.getters.offensesByIssue(this.issueId);
-      }
+    offenses() {
+      return this.$store.getters.offensesByIssue(this.issueId);
+    },
 
-    }
-  };
+  },
+};
 </script>
 
 <style scoped>

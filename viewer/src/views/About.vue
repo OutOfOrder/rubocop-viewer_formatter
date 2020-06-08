@@ -5,12 +5,12 @@
 </template>
 
 <script>
-  import {mapState} from 'vuex';
+import { mapState } from 'vuex';
 
-  export default {
-    name: 'About',
-    computed: {
-      ...mapState(['metadata']),
-    },
-  };
+export default {
+  name: 'About',
+  computed: {
+    ...mapState(['metadata']),
+  },
+};
 </script>

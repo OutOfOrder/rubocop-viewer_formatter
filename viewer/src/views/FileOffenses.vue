@@ -23,25 +23,25 @@
 </template>
 
 <script>
-  import OffenseList from '../components/OffenseList';
-  import SourceParsing from '../mixins/SourceParsing';
+import OffenseList from '../components/OffenseList';
+import SourceParsing from '../mixins/SourceParsing';
 
-  export default {
-    name: "FileOffenses",
-    components: {OffenseList},
-    mixins: [SourceParsing],
-    props: {
-      fileId: {type: String, required: true},
+export default {
+  name: 'FileOffenses',
+  components: { OffenseList },
+  mixins: [SourceParsing],
+  props: {
+    fileId: { type: String, required: true },
+  },
+  computed: {
+    file() {
+      return this.$store.getters.fileById(this.fileId);
     },
-    computed: {
-      file() {
-        return this.$store.getters.fileById(this.fileId);
-      },
-      offenses() {
-        return this.$store.getters.offensesByFile(this.fileId);
-      }
+    offenses() {
+      return this.$store.getters.offensesByFile(this.fileId);
     },
-  };
+  },
+};
 </script>
 
 <style scoped lang="scss">
