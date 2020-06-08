@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name        = 'rubocop-viewer_formatter'
-  gem.version     = '1.0.1'
+  gem.version     = '1.0.2'
   gem.authors     = ['Edward Rudd']
   gem.email       = ['urkle@outoforder.cc']
   gem.description = 'A formatter for rubocop that generates a vue based-interactive app'
@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.license     = 'MIT'
 
   gem.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
-  gem.files.reject! {|fn| fn.include? "viewer/"}
+  gem.files.reject! {|fn| fn.match '(viewer/|.gitignore|.rubocop.yml)'}
   gem.files += ['viewer/dist/js/app.js']
 
   gem.executables   = gem.files.grep(%r{^bin/}).map {|f| File.basename(f)}
