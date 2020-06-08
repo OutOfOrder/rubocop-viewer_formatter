@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'rubygems'
+$LOAD_PATH.unshift("#{__dir__}/../lib")
+
+version = ">= 0.a"
+
+str = ARGV.first
+if str
+  str = str.b[/\AR_(.*)_\z/, 1]
+  if str and Gem::Version.correct?(str)
+    version = str
+    ARGV.shift
+  end
+end
+
+ARGV.unshift '-r', 'rubocop/formatter/viewer_formatter', '-f', 'RuboCop::Formatter::ViewerFormatter'
+
+if Gem.respond_to?(:activate_bin_path)
+  load Gem.activate_bin_path('rubocop', 'rubocop', version)
+else
+  gem "rubocop", version
+  load Gem.bin_path("rubocop", "rubocop", version)
+end
