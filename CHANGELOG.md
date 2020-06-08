@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 ### Fixed
 
+## [1.0.2]
+### Added
+- added a rubocop-viewer binary to make it easier to run
+
 ## [1.0.1]
 ### Fixed
 - fix highlighting of multi-line issues

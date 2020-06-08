@@ -4,19 +4,48 @@ AllCops:
   UseCache: false
   TargetRubyVersion: 2.4
 #  DefaultFormatter: RuboCop::Formatter::ViewerFormatter
+
+Layout/AssignmentIndentation:
+  IndentationWidth: 4
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/FirstHashElementIndentation:
+  IndentationWidth: 4
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+Layout/SpaceInsideBlockBraces:
+  EnforcedStyle: no_space
+  SpaceBeforeBlockParameters: false
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
 Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma
-Layout/SpaceInsideBlockBraces:
-  EnforcedStyle: no_space
-  SpaceBeforeBlockParameters: false
-Layout/AlignHash:
-  EnforcedHashRocketStyle: table
-  EnforcedColonStyle: table
-Layout/IndentFirstHashElement:
-  IndentationWidth: 4
-Layout/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-Layout/IndentAssignment:
-  IndentationWidth: 4

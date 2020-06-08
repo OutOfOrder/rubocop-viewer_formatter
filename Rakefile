@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
 require 'bundler'
 Bundler::GemHelper.install_tasks
+
+require 'English'
 
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new(:spec) do |config|
@@ -11,12 +15,12 @@ namespace :yarn do
   task :build do
     output = `(cd viewer; yarn build) 2>&1`
 
-    unless $?.success?
-      $stderr.puts "\n\n"
-      $stderr.puts "Yarn failed to build"
-      $stderr.puts "\n\n"
-      $stderr.puts output
-      $stderr.puts "\n\n"
+    unless $CHILD_STATUS.success?
+      warn "\n\n"
+      warn 'Yarn failed to build'
+      warn "\n\n"
+      warn output
+      warn "\n\n"
       exit(1)
     end
   end

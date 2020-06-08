@@ -106,7 +106,7 @@ module RuboCop
       end
 
       def source_lines(offense)
-        (offense.line .. offense.last_line).map do |line_num|
+        (offense.line..offense.last_line).map do |line_num|
           offense.location.source_buffer.source_line(line_num)
         end.join("\n")
       end
