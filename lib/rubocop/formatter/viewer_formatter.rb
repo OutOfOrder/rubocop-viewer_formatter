@@ -7,7 +7,7 @@ module RuboCop
   module Formatter
     # This formatter formats the report data in Vue based interactive viewer.
     class ViewerFormatter < BaseFormatter
-      APP_JS_PATH = File.expand_path('../../../viewer/dist/js/app.js', __dir__)
+      APP_JS_PATH   = File.expand_path('../../../viewer/dist/js/app.js', __dir__)
       TEMPLATE_PATH =
           File.expand_path('../../../assets/output.html.erb', __dir__)
 
@@ -59,7 +59,7 @@ module RuboCop
 
         def initialize(json_data, app_js)
           @json_data = json_data
-          @app_js = app_js
+          @app_js    = app_js
         end
 
         def binding
@@ -80,7 +80,7 @@ module RuboCop
       def hash_for_file(file, offenses)
         {
             path:     smart_path(file),
-            offenses: offenses.map {|o| hash_for_offense(o)},
+            offenses: offenses.map { |o| hash_for_offense(o) },
         }
       end
 
