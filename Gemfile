@@ -6,4 +6,4 @@ source 'https://rubygems.org'
 gemspec
 
 # for runtime checking of this gem's rubocop offences
-gem 'rubocop', '~> 0.85.0'
+gem 'rubocop', '~> 1.6.0'

@@ -14,12 +14,13 @@ Gem::Specification.new do |gem|
   gem.license     = 'MIT'
 
   gem.files = `git ls-files`.split($INPUT_RECORD_SEPARATOR)
-  gem.files.reject! {|fn| fn.match '(viewer/|.gitignore|.rubocop.yml)'}
+  gem.files.reject! { |fn| fn.match '(viewer/|.gitignore|.rubocop.yml)' }
   gem.files += ['viewer/dist/js/app.js']
 
-  gem.executables   = gem.files.grep(%r{^bin/}).map {|f| File.basename(f)}
-  gem.test_files    = gem.files.grep(%r{^(spec|features)/})
-  gem.require_paths = ['lib']
+  gem.executables           = gem.files.grep(%r{^bin/}).map { |f| File.basename(f) }
+  gem.test_files            = gem.files.grep(%r{^(spec|features)/})
+  gem.require_paths         = ['lib']
+  gem.required_ruby_version = '>= 2.4'
 
   gem.add_dependency 'rubocop', '>= 0.70'
   gem.add_development_dependency 'bundler', '~> 1.3'
