@@ -62,9 +62,12 @@ module RuboCop
           @app_js    = app_js
         end
 
+        # rubocop:disable Lint/UselessMethodDefinition
         def binding
           super
         end
+
+        # rubocop:enable Lint/UselessMethodDefinition
       end
 
       def metadata_hash
