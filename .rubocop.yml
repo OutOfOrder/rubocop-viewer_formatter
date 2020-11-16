@@ -17,20 +17,42 @@ Layout/HashAlignment:
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 Layout/SpaceInsideBlockBraces:
-  EnforcedStyle: no_space
-  SpaceBeforeBlockParameters: false
+  EnforcedStyle: space
+  SpaceBeforeBlockParameters: true
 Layout/SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
 
 Lint/DeprecatedOpenSSLConstant:
   Enabled: true
+Lint/DuplicateBranch: # (new in 1.3)
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement: # (new in 1.1)
+  Enabled: true
+Lint/EmptyBlock: # (new in 1.1)
+  Enabled: true
+Lint/EmptyClass: # (new in 1.3)
+  Enabled: true
 Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks: # (new in 1.2)
   Enabled: true
 Lint/RaiseException:
   Enabled: true
 Lint/StructNewOverride:
   Enabled: true
+Lint/ToEnumArguments: # (new in 1.1)
+  Enabled: true
+Lint/UnexpectedBlockArity: # (new in 1.5)
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator: # (new in 1.1)
+  Enabled: true
 
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+Style/CollectionCompact: # (new in 1.2)
+  Enabled: true
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
+  Enabled: true
 Style/ExponentialNotation:
   Enabled: true
 Style/HashEachMethods:
@@ -39,11 +61,19 @@ Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
   Enabled: true
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
 Style/RedundantRegexpCharacterClass:
   Enabled: true
 Style/RedundantRegexpEscape:
   Enabled: true
 Style/SlicingWithRange:
+  Enabled: true
+Style/SwapValues: # (new in 1.1)
   Enabled: true
 Style/TrailingCommaInArrayLiteral:
   EnforcedStyleForMultiline: comma
