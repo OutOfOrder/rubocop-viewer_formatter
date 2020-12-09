@@ -11,3 +11,6 @@ Gemfile.lock
 
 .ruby-version
 .ruby-gemset
+
+/pkg
+/outdated.txt
