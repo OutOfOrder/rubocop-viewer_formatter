@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'bundler'
+require 'bundler/gem_tasks'
 Bundler::GemHelper.install_tasks
 
 require 'English'
@@ -26,6 +26,4 @@ namespace :yarn do
   end
 end
 
-Rake::Task['build'].enhance do
-  Rake::Task['yarn:build'].invoke
-end
+task build: 'yarn:build'
