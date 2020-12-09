@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name        = 'rubocop-viewer_formatter'
-  gem.version     = '1.0.2'
+  gem.version     = '1.0.3'
   gem.authors     = ['Edward Rudd']
   gem.email       = ['urkle@outoforder.cc']
   gem.description = 'A formatter for rubocop that generates a vue based-interactive app'
