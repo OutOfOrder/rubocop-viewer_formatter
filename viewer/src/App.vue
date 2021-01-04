@@ -5,7 +5,7 @@
         li
           router-link(:to="{name:'by_files'}") By file
         li
-          router-link(:to="{name:'by_issues'}") By issue
+          router-link(:to="{name:'by_categories'}") By issue
         li
           router-link(:to="{name:'about'}") About
 
@@ -77,51 +77,6 @@
 
       &:nth-child(2) {
         flex: 1 1 auto;
-      }
-    }
-  }
-
-  $severity_colors: (
-          "refactor": rgba(237, 156, 40, 1.0),
-          "convention": rgba(237, 156, 40, 1.0),
-          "warning": rgba(150, 40, 239, 1.0),
-          "error": rgba(210, 50, 45, 1.0),
-          "fatal": rgba(210, 50, 45, 1.0),
-  );
-
-  .offense {
-    .meta {
-      .location {
-        font-weight: bold;
-      }
-
-      .severity {
-        text-transform: capitalize;
-        font-weight: bold;
-
-        @each $severity, $color in $severity_colors {
-          &.#{$severity} {
-            color: $color;
-          }
-        }
-      }
-    }
-
-    pre {
-      code {
-        display: block;
-        background: #000000;
-        color: #ffffff;
-        padding: 10px 15px;
-        border-radius: 15px;
-
-        .highlight {
-          @each $severity, $color in $severity_colors {
-            &.#{$severity} {
-              background-color: adjust-color($color, $alpha: -0.4);
-            }
-          }
-        }
       }
     }
   }

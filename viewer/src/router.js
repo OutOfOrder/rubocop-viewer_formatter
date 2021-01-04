@@ -5,6 +5,7 @@ import ByFiles from './views/ByFiles';
 import ByIssues from './views/ByIssues';
 import FileOffenses from './views/FileOffenses';
 import IssueOffenses from './views/IssueOffenses';
+import ByCategories from './views/ByCategories';
 
 Vue.use(Router);
 
@@ -36,14 +37,22 @@ export default new Router({
     },
     {
       path: '/issues',
-      name: 'by_issues',
-      component: ByIssues,
+      name: 'by_categories',
+      component: ByCategories,
       children: [
         {
-          path: ':issueId',
-          name: 'for_issue',
-          component: IssueOffenses,
+          path: ':categoryId',
+          name: 'by_issues',
+          component: ByIssues,
           props: true,
+          children: [
+            {
+              path: ':issueId',
+              name: 'for_issue',
+              component: IssueOffenses,
+              props: true,
+            },
+          ],
         },
       ],
     },

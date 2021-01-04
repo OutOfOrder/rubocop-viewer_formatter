@@ -3,17 +3,41 @@ export const indexByIssue = (state) => {
   const issues = {};
   state.files.forEach((f, fileIdx) => {
     f.offenses.forEach((o, offenseIdx) => {
-      if (!(o.cop_name in issues)) issues[o.cop_name] = { key: o.cop_name, label: o.cop_name, offenses: [] };
+      if (!(o.cop_name in issues)) {
+        const category = o.cop_name.split('/')[0];
+        issues[o.cop_name] = { key: o.cop_name, category: category, label: o.cop_name, offenses: [] };
+      }
       issues[o.cop_name].offenses.push({ file: fileIdx, offense: offenseIdx });
     });
   });
   return issues;
 };
 
-export const issues = (state, getters) => {
-  return Object.values(getters.indexByIssue)
-    .map((a) => ({ key: a.key, label: a.label }))
+export const issuesByCategory = (state, getters) => {
+  const categories = {};
+  for (const issue in getters.indexByIssue) {
+    const o = getters.indexByIssue[issue];
+    if (!(o.category in categories)) {
+      categories[o.category] = [];
+    }
+    categories[o.category].push(o.key);
+  }
+  return categories;
+};
+
+export const categories = (state, getters) => {
+  return Object.keys(getters.issuesByCategory)
+    .map((a) => ({ key: a, label: a }))
     .sort((a, b) => a.label > b.label);
+};
+
+export const issues = (state, getters) => {
+  const issues = [];
+  for (const issue in getters.indexByIssue) {
+    const o = getters.indexByIssue[issue];
+    issues.push({ key: o.key, label: o.label });
+  }
+  return issues.sort((a, b) => a.label > b.label);
 };
 
 export const issueById = (state, getters) => (issueId) => {

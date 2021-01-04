@@ -10,13 +10,20 @@
 <script>
 import ListEntries from '../components/ListEntries';
 
-import { mapGetters } from 'vuex';
-
 export default {
   name: 'ByIssues',
   components: { ListEntries },
+  props: {
+    categoryId: { type: String, required: true },
+  },
   computed: {
-    ...mapGetters(['issues']),
+    issues() {
+      const unsortedCategories = this.$store.getters.issuesByCategory[this.categoryId] || [];
+      const categories = [...unsortedCategories];
+      return categories
+        .map((a) => ({ key: a, label: a.split('/')[1] }))
+        .sort((a, b) => a.label > b.label);
+    },
   },
 };
 </script>
