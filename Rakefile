@@ -15,7 +15,9 @@ namespace :yarn do
   task :build do
     output = `(cd viewer; yarn build) 2>&1`
 
-    unless $CHILD_STATUS.success?
+    if $CHILD_STATUS.success?
+      puts 'Built app.js successfully'
+    else
       warn "\n\n"
       warn 'Yarn failed to build'
       warn "\n\n"
@@ -25,5 +27,26 @@ namespace :yarn do
     end
   end
 end
+
+desc 'Build a sample using the given JSON data dump file. default output sample.html'
+task sample: ['yarn:build']
+task :sample, [:json_file,:output_html] do |t, args|
+  args.with_defaults(output_html: 'sample.html')
+  raise 'Must pass json_file input' if args[:json_file].nil?
+
+  require 'rubocop/path_util'
+  require 'rubocop/version'
+  require 'rubocop/formatter/base_formatter'
+  require_relative 'lib/rubocop/formatter/viewer_formatter'
+
+  data = JSON.parse(File.read(args[:json_file]))
+  output = File.open(args[:output_html], 'w')
+
+  formatter = RuboCop::Formatter::ViewerFormatter.new(output)
+  formatter.output_hash.clear
+  formatter.output_hash.merge!(data)
+  formatter.render_html
+end
+
 
 task build: 'yarn:build'
